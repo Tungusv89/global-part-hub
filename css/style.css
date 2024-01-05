@@ -1,0 +1,30 @@
+.btn-gph {
+	cursor: pointer;
+	padding: 4px 8px;
+	background-color: #f2d5c5;
+	width: fit-content;
+	text-align: center;
+	margin: 10px auto 0 auto;
+	transition: all .3s ease;
+}
+
+.btn-gph:hover {
+	background-color: #fff;
+}
+
+.case {
+	display: none
+}
+
+.case.active {
+	display: flex;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	background-color: #636363;
+}
+
+.case .modal {
+	background-color: #fff;
+}
