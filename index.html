@@ -4519,7 +4519,131 @@ position: static;
                         data-field-width-res-960-value="463" style="zoom: 1.583;">
                         <div class="tn-atom" field="tn_text_1683203554414">из ОАЭ, Турции и стран ЕС</div>
                     </div>
-                    <div class="t396__elem tn-elem tn-elem__5986385071685435379238 t396__elem--anim-hidden"
+                    <div class="carusel t396__elem tn-elem tn-elem__5986385071685435379238 t396__elem--anim-hidden"
+                    data-elem-id="1685435379238" data-elem-type="text" data-field-top-value="376"
+                    data-field-left-value="50" data-field-width-value="81" data-field-axisy-value="top"
+                    data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+                    data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+                    data-animate-mobile="y" data-animate-sbs-event="intoview" data-animate-sbs-trg="1"
+                    data-animate-sbs-trgofst="0" data-animate-sbs-loop="loop"
+                    data-animate-sbs-opts="[{'ti':'0','mx':'0','my':'0','sx':'1','sy':'1','op':'1','ro':'0','bl':'0','ea':'','dt':'0'},{'ti':0,'mx':0,'my':'0','sx':'1','sy':'1','op':0,'ro':'0','bl':'0','ea':'','dt':'0'},{'ti':0,'mx':'0','my':'0','sx':'1','sy':'1','op':0,'ro':'0','bl':'0','ea':'','dt':'0'},{'ti':300,'mx':-116,'my':'0','sx':'1','sy':'1','op':0,'ro':'0','bl':'0','ea':'','dt':'0'},{'ti':1500,'mx':-116,'my':'0','sx':'1','sy':'1','op':0,'ro':'0','bl':'0','ea':'','dt':'0'},{'ti':300,'mx':-270,'my':'0','sx':'1','sy':'1','op':1,'ro':'0','bl':'0','ea':'','dt':'0'},{'ti':1500,'mx':-270,'my':'0','sx':'1','sy':'1','op':1,'ro':'0','bl':'0','ea':'','dt':'0'},{'ti':300,'mx':-451,'my':'0','sx':'1','sy':'1','op':0,'ro':'0','bl':'0','ea':'','dt':'0'}]"
+                    data-field-top-res-320-value="263" data-field-top-res-480-value="272"
+                    data-field-left-res-640-value="20" data-field-top-res-960-value="323"
+                    data-field-left-res-960-value="40" style="zoom: 1.583;">
+                        <div class="g-container">
+                            <ul style="--s: 21">
+                                <li>Komatsu</li>
+                                <li>Hitachi</li>
+                                <li>John Deere</li>
+                                <li>Caterpillar</li>
+                                <li>Iveco</li>
+                                <li>Ford</li>
+                                <li>Scania</li>
+                                <li>MAN Truck & Bus</li>
+                                <li>Volvo Trucks</li>
+                                <li>Bobcat</li>
+                                <li>Caterpillar</li>
+                                <li>CNH</li>
+                                <li>DoosanDressta</li>
+                                <li>Hidromek</li>
+                                <li>Hyundai</li>
+                                <li>JCB</li>
+                                <li>Liebherr</li>
+                                <li>Volvo</li>
+                                <li>Wirtgen</li>
+                                <li>Yamaha</li>
+                                <li>Hyster</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <style>
+                        * {
+                            padding: 0;
+                            margin: 0;
+                        }
+
+                        li {
+                            list-style: none;
+                            text-align: center;
+                        }
+
+                        /* .carusel {
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                        } */
+
+                        :root {
+                            --w: 140;
+                            --speed: 2s;
+                        }
+
+                        .g-container {
+                            width: 140px;
+                            margin: auto;
+                            height: 22px;
+                            color: #f2d5c5;
+                            font-size: 14px;
+                            font-family: 'TTFirsNeue', Arial, sans-serif;
+                            line-height: 22px;
+                            font-weight: 500;
+                            /* background: #673ab7; */
+                            color: #fff;
+                            overflow: hidden;
+                            /* border: 2px solid #000; */
+                        }
+
+                        ul {
+                            display: flex;
+                            flex-wrap: nowrap;
+                            padding: 0!important;
+                        }
+
+                        ul li {
+                            flex-shrink: 0;
+                            width: 100%;
+                            height: 100%;
+                            box-sizing: border-box;
+                        }
+
+                        ul li img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+
+                        ul {
+                            animation: move calc(var(--speed) * var(--s)) steps(var(--s)) infinite;
+                        }
+
+                        ul li {
+                            white-space: nowrap;
+                            cursor: pointer;
+                            animation: move1 calc(var(--speed)) infinite;
+                        }
+
+                        @keyframes move {
+                            0% {
+                                transform: translate(0, 0px);
+                            }
+
+                            100% {
+                                transform: translate(calc(var(--s) * var(--w) * -1px), 0);
+                            }
+                        }
+
+                        @keyframes move1 {
+                            0% {
+                                transform: translate(0, 0px);
+                            }
+
+                            80%,
+                            100% {
+                                transform: translate(calc(var(--w) * -1px), 0);
+                            }
+                        }
+                    </style>
+                    <!-- <div class="t396__elem tn-elem tn-elem__5986385071685435379238 t396__elem--anim-hidden"
                         data-elem-id="1685435379238" data-elem-type="text" data-field-top-value="376"
                         data-field-left-value="330" data-field-width-value="81" data-field-axisy-value="top"
                         data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
@@ -4531,8 +4655,8 @@ position: static;
                         data-field-left-res-640-value="300" data-field-top-res-960-value="323"
                         data-field-left-res-960-value="320" style="zoom: 1.583;">
                         <div class="tn-atom" field="tn_text_1685435379238">Komatsu</div>
-                    </div>
-                    <div class="t396__elem tn-elem tn-elem__5986385071685435379243 t396__elem--anim-hidden"
+                    </div> -->
+                    <!-- <div class="t396__elem tn-elem tn-elem__5986385071685435379243 t396__elem--anim-hidden"
                         data-elem-id="1685435379243" data-elem-type="text" data-field-top-value="376"
                         data-field-left-value="177" data-field-width-value="85" data-field-axisy-value="top"
                         data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
@@ -4544,7 +4668,20 @@ position: static;
                         data-field-left-res-640-value="147" data-field-top-res-960-value="323"
                         data-field-left-res-960-value="167" style="zoom: 1.583;">
                         <div class="tn-atom" field="tn_text_1685435379243">Hitachi</div>
-                    </div>
+                    </div> -->
+                    <!-- <div class="t396__elem tn-elem tn-elem__59863850716854353792499 t396__elem--anim-hidden"
+                        data-elem-id="1685435379243" data-elem-type="text" data-field-top-value="376"
+                        data-field-left-value="483" data-field-width-value="85" data-field-axisy-value="top"
+                        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+                        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+                        data-animate-mobile="y" data-animate-sbs-event="intoview" data-animate-sbs-trg="1"
+                        data-animate-sbs-trgofst="0" data-animate-sbs-loop="loop"
+                        data-animate-sbs-opts="[{'ti':'0','mx':'0','my':'0','sx':'1','sy':'1','op':'1','ro':'0','bl':'0','ea':'','dt':'0'},{'ti':0,'mx':0,'my':'0','sx':'1','sy':'1','op':0,'ro':'0','bl':'0','ea':'','dt':'0'},{'ti':0,'mx':'0','my':'0','sx':'1','sy':'1','op':0,'ro':'0','bl':'0','ea':'','dt':'0'},{'ti':300,'mx':-116,'my':'0','sx':'1','sy':'1','op':1,'ro':'0','bl':'0','ea':'','dt':'0'},{'ti':1500,'mx':-116,'my':'0','sx':'1','sy':'1','op':1,'ro':'0','bl':'0','ea':'','dt':'0'},{'ti':300,'mx':-270,'my':'0','sx':'1','sy':'1','op':0,'ro':'0','bl':'0','ea':'','dt':'0'},{'ti':1500,'mx':-270,'my':'0','sx':'1','sy':'1','op':0,'ro':'0','bl':'0','ea':'','dt':'0'},{'ti':300,'mx':-451,'my':'0','sx':'1','sy':'1','op':0,'ro':'0','bl':'0','ea':'','dt':'0'}]"
+                        data-field-top-res-320-value="263" data-field-top-res-480-value="273"
+                        data-field-left-res-640-value="147" data-field-top-res-960-value="323"
+                        data-field-left-res-960-value="167" style="zoom: 1.583;">
+                        <div class="tn-atom" field="tn_text_168543537924399">John Deere</div>
+                    </div> -->
                     <div class="t396__elem tn-elem tn-elem__5986385071685435379247" data-elem-id="1685435379247"
                         data-elem-type="shape" data-field-top-value="372" data-field-left-value="-41"
                         data-field-height-value="32" data-field-width-value="91" data-field-axisy-value="top"
@@ -4567,7 +4704,7 @@ position: static;
                                 data-original="https://static.tildacdn.com/tild3336-6163-4266-a135-326363643463/Vector_3.svg"
                                 imgfield="tn_img_1685435379253"></div>
                     </div>
-                    <div class="t396__elem tn-elem tn-elem__5986385071685435379257" data-elem-id="1685435379257"
+                    <!-- <div class="t396__elem tn-elem tn-elem__5986385071685435379257" data-elem-id="1685435379257"
                         data-elem-type="shape" data-field-top-value="352" data-field-left-value="162"
                         data-field-height-value="70" data-field-width-value="269" data-field-axisy-value="top"
                         data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
@@ -4577,19 +4714,20 @@ position: static;
                         data-field-width-res-480-value="259" data-field-left-res-640-value="132"
                         data-field-top-res-960-value="298" data-field-left-res-960-value="152" style="zoom: 1.583;">
                         <div class="tn-atom"></div>
-                    </div>
+                    </div> -->
                     <div class="t396__elem tn-elem tn-elem__5986385071685435379263 " data-elem-id="1685435379263"
-                        data-elem-type="image" data-field-top-value="375" data-field-left-value="148"
+                        data-elem-type="image" data-field-top-value="375" data-field-left-value="188"
                         data-field-width-value="6" data-field-axisy-value="top" data-field-axisx-value="left"
                         data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px"
                         data-field-heightunits-value="" data-field-widthunits-value="px" data-animate-mobile="y"
-                        data-animate-sbs-event="intoview" data-animate-sbs-trg="1" data-animate-sbs-trgofst="0"
+
+                        data-animate-sbs-trg="1" data-animate-sbs-trgofst="0"
                         data-animate-sbs-loop="loop"
                         data-animate-sbs-opts="[{'ti':'0','mx':'0','my':'0','sx':'1','sy':'1','op':'1','ro':'0','bl':'0','ea':'','dt':'0'},{'ti':0,'mx':0,'my':0,'sx':'1','sy':'1','op':1,'ro':'0','bl':'0','ea':'','dt':'0'},{'ti':300,'mx':0,'my':'0','sx':'1','sy':'1','op':1,'ro':'0','bl':'0','ea':'','dt':'0'},{'ti':1500,'mx':0,'my':'0','sx':'1','sy':'1','op':1,'ro':'0','bl':'0','ea':'','dt':'0'},{'ti':300,'mx':-7,'my':0,'sx':'1','sy':'1','op':1,'ro':'0','bl':'0','ea':'','dt':'0'},{'ti':1500,'mx':-7,'my':'0','sx':'1','sy':'1','op':1,'ro':'0','bl':'0','ea':'','dt':'0'},{'ti':300,'mx':0,'my':'0','sx':'1','sy':'1','op':1,'ro':'0','bl':'0','ea':'','dt':'0'}]"
                         data-field-filewidth-value="7" data-field-fileheight-value="29"
                         data-field-top-res-320-value="262" data-field-top-res-480-value="272"
-                        data-field-left-res-640-value="118" data-field-top-res-960-value="322"
-                        data-field-left-res-960-value="138" style="zoom: 1.583;">
+                        data-field-left-res-640-value="158" data-field-top-res-960-value="322"
+                        data-field-left-res-960-value="178" style="zoom: 1.583;">
                         <div class="tn-atom"><img class="tn-atom__img t-img"
                                 data-original="https://static.tildacdn.com/tild3331-3631-4839-b830-333961393065/Vector_6.svg"
                                 imgfield="tn_img_1685435379263"></div>
@@ -11438,7 +11576,8 @@ position: static;
                 });</script><!-- /T396 -->
         </div>
         <div id="rec600449703" class="r t-rec" style=" " data-record-type="215"><a name="yslygi"
-                style="font-size:0;"></a></div>
+                style="font-size:0;"></a>
+        </div>
 
         <div id="rec601164070" class="r t-rec t-rec_pb_0" style="padding-bottom:0px; " data-animationappear="off"
             data-record-type="702"><!-- T702 -->
@@ -16223,7 +16362,8 @@ position: static;
                 });</script><!-- /T396 -->
         </div>
         <div id="rec600501197" class="r t-rec" style=" " data-record-type="215"><a name="about"
-                style="font-size:0;"></a></div>
+                style="font-size:0;"></a>
+        </div>
         <div id="rec600501369" class="r t-rec" style=" " data-animationappear="off" data-record-type="396"><!-- T396 -->
             <style>
                 #rec600501369 .t396__artboard {
@@ -17801,8 +17941,7 @@ position: static;
                                                 <div class="t923__wrapper" style="" data-blocks-per-row="3">
                                                     <div class="t923__imgwrapper t923__imgwrapper_1-1" itemscope=""
                                                         itemtype="http://schema.org/ImageObject">
-                                                        <meta itemprop="image"
-                                                            content="images/case2.jpeg">
+                                                        <meta itemprop="image" content="images/case2.jpeg">
                                                         <div class="t923__bgimg t-bgimg"
                                                             data-original="images/case2.jpeg"
                                                             style="background-image:url('images/case2.HEIC');"
@@ -17817,10 +17956,12 @@ position: static;
                                                             <div class="t-card__descr t-descr t-descr_xxs"
                                                                 field="li_descr__1571908130894"
                                                                 style="color:#0074e6;font-size:14px;font-family:'TTFirsNeue';">
-                                                                Встречаем компанию-инноватора, специализирующуюся на передовых...
+                                                                Встречаем компанию-инноватора, специализирующуюся на
+                                                                передовых...
                                                                 <div class="btn-gph" data-target="case2">
                                                                     Подробнее
-                                                                </div></div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -19228,7 +19369,8 @@ float: none;
                         data-field-left-res-640-value="20" data-field-height-res-640-value="37"
                         data-field-width-res-640-value="118" data-field-top-res-960-value="295"
                         data-field-left-res-960-value="366" style="zoom: 1.583;"><a class="tn-atom"
-                            href="https://wa.me/79936881688" rel="nofollow" target="_blank">WhatsApp</a></div>
+                            href="https://wa.me/79936881688" rel="nofollow" target="_blank">WhatsApp</a>
+                    </div>
                     <div class="t396__elem tn-elem tn-elem__6011116221686054259342" data-elem-id="1686054259342"
                         data-elem-type="button" data-field-top-value="313" data-field-left-value="421"
                         data-field-height-value="20" data-field-width-value="165" data-field-axisy-value="top"
@@ -19242,7 +19384,8 @@ float: none;
                         data-field-left-res-640-value="178" data-field-height-res-640-value="37"
                         data-field-width-res-640-value="108" data-field-top-res-960-value="325"
                         data-field-left-res-960-value="366" style="zoom: 1.583;"><a class="tn-atom"
-                            href="https://t.me/+89936881688" rel="nofollow" target="_blank">Telegram</a></div>
+                            href="https://t.me/+89936881688" rel="nofollow" target="_blank">Telegram</a>
+                    </div>
                     <div class="t396__elem tn-elem tn-elem__6011116221685691411991" data-elem-id="1685691411991"
                         data-elem-type="button" data-field-top-value="351" data-field-left-value="421"
                         data-field-height-value="20" data-field-width-value="165" data-field-axisy-value="top"
@@ -19363,18 +19506,22 @@ float: none;
                     Быстрый и эффективный поиск, разумная закупка и
                     безграничная поддержка на каждом этапе — мы не просто
                     продаем запчасти, мы создаем истории успеха. Мы – Global
-                    Part Hub</div>
+                    Part Hub
+                </div>
             </div>
         </div>
         <div id="case2" class="case">
             <div class="modal">
                 <img src="images/case2.jpeg" alt="">
                 <div class="title">Global Part Hub в Мире Лазерной Резки и Гравировки</div>
-                <div class="description">Встречаем компанию-инноватора, специализирующуюся на передовых лазерных технологиях для резки и гравировки. На своем пути, они столкнулись с необходимостью замены лазерной трубки LASEA ZS 2050, тут то Global Part Hub и вступил в игру.
+                <div class="description">Встречаем компанию-инноватора, специализирующуюся на передовых лазерных
+                    технологиях для резки и гравировки. На своем пути, они столкнулись с необходимостью замены лазерной
+                    трубки LASEA ZS 2050, тут то Global Part Hub и вступил в игру.
 
                     <div class="title">Технологический Гид:</div>
 
-                    • Наши эксперты провели глубокую консультацию, выслушали требования клиента и предложили идеальную лазерную трубку, гарантируя отличные результаты при резке и гравировке
+                    • Наши эксперты провели глубокую консультацию, выслушали требования клиента и предложили идеальную
+                    лазерную трубку, гарантируя отличные результаты при резке и гравировке
 
                     <div class="title">Поиск Оптимальных Условий:</div>
 
@@ -19386,13 +19533,17 @@ float: none;
 
                     <div class="title">Экспрессная Передача Инноваций:</div>
 
-                    • Лазерная трубка была доставлена на производственное место клиента быстро и безупречно, от двери до двери, обеспечивая бесперебойную работу нашего нового партнера.
+                    • Лазерная трубка была доставлена на производственное место клиента быстро и безупречно, от двери до
+                    двери, обеспечивая бесперебойную работу нашего нового партнера.
 
                     <div class="title">Завершение Этапа Инноваций:</div>
 
-                    Global Part Hub не только предоставил необходимую деталь, но и поддержал компанию в их стремлении к инновациям, обеспечив доступ к передовым технологиям.
+                    Global Part Hub не только предоставил необходимую деталь, но и поддержал компанию в их стремлении к
+                    инновациям, обеспечив доступ к передовым технологиям.
 
-                    Быстрый и эффективный поиск, разумная закупка и безграничная поддержка на каждом этапе — мы не просто продаем запчасти, мы создаем истории успеха. Мы – Global Part Hub</div>
+                    Быстрый и эффективный поиск, разумная закупка и безграничная поддержка на каждом этапе — мы не
+                    просто продаем запчасти, мы создаем истории успеха. Мы – Global Part Hub
+                </div>
             </div>
         </div>
         <div id="case3" class="case">
@@ -19445,7 +19596,8 @@ float: none;
                     Быстрый и эффективный поиск, разумная закупка и
                     безграничная поддержка на каждом этапе — мы не просто
                     продаем запчасти, мы создаем истории успеха. Мы – Global
-                    Part Hub</div>
+                    Part Hub
+                </div>
             </div>
         </div>
         <div id="case4" class="case">
@@ -19498,7 +19650,8 @@ float: none;
                     Быстрый и эффективный поиск, разумная закупка и
                     безграничная поддержка на каждом этапе — мы не просто
                     продаем запчасти, мы создаем истории успеха. Мы – Global
-                    Part Hub</div>
+                    Part Hub
+                </div>
             </div>
         </div>
         <div id="case5" class="case">
@@ -19551,7 +19704,8 @@ float: none;
                     Быстрый и эффективный поиск, разумная закупка и
                     безграничная поддержка на каждом этапе — мы не просто
                     продаем запчасти, мы создаем истории успеха. Мы – Global
-                    Part Hub</div>
+                    Part Hub
+                </div>
             </div>
         </div>
         <div id="case6" class="case">
@@ -19604,7 +19758,8 @@ float: none;
                     Быстрый и эффективный поиск, разумная закупка и
                     безграничная поддержка на каждом этапе — мы не просто
                     продаем запчасти, мы создаем истории успеха. Мы – Global
-                    Part Hub</div>
+                    Part Hub
+                </div>
             </div>
         </div>
         <div id="case7" class="case">
@@ -19657,7 +19812,8 @@ float: none;
                     Быстрый и эффективный поиск, разумная закупка и
                     безграничная поддержка на каждом этапе — мы не просто
                     продаем запчасти, мы создаем истории успеха. Мы – Global
-                    Part Hub</div>
+                    Part Hub
+                </div>
             </div>
         </div>
         <div id="case8" class="case">
@@ -19710,7 +19866,8 @@ float: none;
                     Быстрый и эффективный поиск, разумная закупка и
                     безграничная поддержка на каждом этапе — мы не просто
                     продаем запчасти, мы создаем истории успеха. Мы – Global
-                    Part Hub</div>
+                    Part Hub
+                </div>
             </div>
         </div>
         <div id="rec598638542" class="r t-rec" style=" " data-record-type="270">
