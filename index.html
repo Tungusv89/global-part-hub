@@ -194,7 +194,7 @@
                     }, 200);
                 });</script>
             <script>t_onReady(function ()
-                { 
+                {
                     var selects = 'button:not(.t-submit):not(.t835__btn_next):not(.t835__btn_prev):not(.t835__btn_result):not(.t862__btn_next):not(.t862__btn_prev):not(.t862__btn_result):not(.t854__news-btn):not(.t862__btn_next),' +
                         'a:not([href*="#"]):not(.carousel-control):not(.t-carousel__control):not(.t807__btn_reply):not([href^="#price"]):not([href^="javascript"]):not([href^="mailto"]):not([href^="tel"]):not([href^="link_sub"]):not(.js-feed-btn-show-more):not(.t367__opener):not([href^="https://www.dropbox.com/"])';
                     var elements = document.querySelectorAll(selects);
@@ -237,8 +237,14 @@
                     width: 100%;
                     left: 0;
                     top: 0;
+                    -webkit-transform: translateY(-100%);
+                    -ms-transform: translateY(-100%);
                     transform: translateY(-100%);
+                    -webkit-transition: -webkit-transform 0.15s;
+                    transition: -webkit-transform 0.15s;
+                    -o-transition: transform 0.15s;
                     transition: transform 0.15s;
+                    transition: transform 0.15s, -webkit-transform 0.15s;
                     z-index: 990;
                 }
 
@@ -535,6 +541,8 @@
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                 }
 
@@ -582,6 +590,8 @@
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                 }
 
@@ -629,6 +639,8 @@
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                 }
 
@@ -676,6 +688,8 @@
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                 }
 
@@ -723,6 +737,8 @@
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                 }
 
@@ -828,6 +844,8 @@
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                 }
 
@@ -886,6 +904,8 @@
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                 }
 
@@ -1037,6 +1057,8 @@
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                 }
 
@@ -1523,7 +1545,11 @@
 
                     #rec599564934 .t-btn:not(.t-animate_no-hover) {
                         -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+                        -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+                        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+                        -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
                         transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+                        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
                     }
 
                     #rec599564934 .t-btntext:not(.t-animate_no-hover):hover {
@@ -2036,7 +2062,11 @@ position: static;
                 #rec599603179 .t862 .t-btn:not(.t-animate_no-hover):not(:disabled),
                 #rec599603179 .t862 .t-submit:not(.t-animate_no-hover):not(:disabled) {
                     -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+                    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+                    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
                 }
             </style>
             <script>t_onReady(function ()
@@ -2314,7 +2344,11 @@ position: static;
 
                 #rec599595087 .t-submit {
                     -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+                    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+                    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
                 }
             </style>
         </div>
@@ -2576,7 +2610,11 @@ position: static;
 
                 #rec599603618 .t-submit {
                     -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+                    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+                    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
                 }
             </style>
         </div>
@@ -2842,7 +2880,11 @@ position: static;
 
                 #rec599607402 .t-submit {
                     -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+                    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+                    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
                 }
             </style>
         </div>
@@ -2850,6 +2892,7 @@ position: static;
             <style>
                 #rec598638507 .t396__artboard {
                     height: 750px;
+                    background-image: -o-linear-gradient(116deg, #6e96be 0%, #0074e6 63%);
                     background-image: linear-gradient(0.9277777777777778turn, #6e96be 0%, #0074e6 63%);
                 }
 
@@ -3067,7 +3110,7 @@ position: static;
 
                     #rec598638507 .tn-elem[data-elem-id="1683207090459"] .tn-atom {
                         -webkit-transform: rotate(354deg);
-                        -moz-transform: rotate(354deg);
+                        -ms-transform: rotate(354deg);
                         transform: rotate(354deg);
                     }
                 }
@@ -3322,6 +3365,7 @@ position: static;
                 }
 
                 #rec598638507 .tn-elem[data-elem-id="1685435379257"] .tn-atom {
+                    background-image: -o-linear-gradient(120deg, #0074e6 1%, #0074e6 71%);
                     background-image: linear-gradient(330deg, #0074e6 1%, #0074e6 71%);
                     border-color: transparent;
                     border-style: solid;
@@ -3469,6 +3513,8 @@ position: static;
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                 }
 
@@ -3839,6 +3885,8 @@ position: static;
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                 }
 
@@ -3886,6 +3934,8 @@ position: static;
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                 }
 
@@ -3933,6 +3983,8 @@ position: static;
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                 }
 
@@ -3980,6 +4032,8 @@ position: static;
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                 }
 
@@ -4027,6 +4081,8 @@ position: static;
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                 }
 
@@ -4132,6 +4188,8 @@ position: static;
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                 }
 
@@ -4190,6 +4248,8 @@ position: static;
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                 }
 
@@ -4341,6 +4401,8 @@ position: static;
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                 }
 
@@ -4567,12 +4629,6 @@ position: static;
                             text-align: center;
                         }
 
-                        /* .carusel {
-                            width: 100%;
-                            height: 100%;
-                            display: flex;
-                        } */
-
                         :root {
                             --w: 140;
                             --speed: 2s;
@@ -4591,51 +4647,88 @@ position: static;
                         }
 
                         ul {
+                            display: -webkit-box;
+                            display: -ms-flexbox;
                             display: flex;
+                            -ms-flex-wrap: nowrap;
                             flex-wrap: nowrap;
                             padding: 0 !important;
                         }
 
                         ul li {
+                            -ms-flex-negative: 0;
                             flex-shrink: 0;
                             width: 100%;
                             height: 100%;
+                            -webkit-box-sizing: border-box;
                             box-sizing: border-box;
                         }
 
                         ul li img {
                             width: 100%;
                             height: 100%;
+                            -o-object-fit: cover;
                             object-fit: cover;
                         }
 
                         ul {
+                            -webkit-animation: move calc(var(--speed) * var(--s)) steps(var(--s)) infinite;
                             animation: move calc(var(--speed) * var(--s)) steps(var(--s)) infinite;
                         }
 
                         ul li {
                             white-space: nowrap;
                             cursor: pointer;
+                            -webkit-animation: move1 calc(var(--speed)) infinite;
                             animation: move1 calc(var(--speed)) infinite;
                         }
 
-                        @keyframes move {
+                        @-webkit-keyframes move {
                             0% {
+                                -webkit-transform: translate(0, 0px);
                                 transform: translate(0, 0px);
                             }
 
                             100% {
+                                -webkit-transform: translate(calc(var(--s) * var(--w) * -1px), 0);
                                 transform: translate(calc(var(--s) * var(--w) * -1px), 0);
                             }
                         }
 
-                        @keyframes move1 {
+                        @keyframes move {
                             0% {
+                                -webkit-transform: translate(0, 0px);
+                                transform: translate(0, 0px);
+                            }
+
+                            100% {
+                                -webkit-transform: translate(calc(var(--s) * var(--w) * -1px), 0);
+                                transform: translate(calc(var(--s) * var(--w) * -1px), 0);
+                            }
+                        }
+
+                        @-webkit-keyframes move1 {
+                            0% {
+                                -webkit-transform: translate(0, 0px);
                                 transform: translate(0, 0px);
                             }
 
                             80%,
                             100% {
+                                -webkit-transform: translate(calc(var(--w) * -1px), 0);
+                                transform: translate(calc(var(--w) * -1px), 0);
+                            }
+                        }
+
+                        @keyframes move1 {
+                            0% {
+                                -webkit-transform: translate(0, 0px);
+                                transform: translate(0, 0px);
+                            }
+
+                            80%,
+                            100% {
+                                -webkit-transform: translate(calc(var(--w) * -1px), 0);
                                 transform: translate(calc(var(--w) * -1px), 0);
                             }
                         }
@@ -5275,6 +5368,8 @@ position: static;
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                 }
 
@@ -5648,7 +5743,7 @@ position: static;
 
                 #rec598638519 .tn-elem[data-elem-id="1683883848224"] .tn-atom {
                     -webkit-transform: rotate(180deg);
-                    -moz-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
                     transform: rotate(180deg);
                 }
 
@@ -5703,6 +5798,8 @@ position: static;
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                 }
 
@@ -6075,7 +6172,7 @@ position: static;
 
                 #rec598638519 .tn-elem[data-elem-id="1683883866921"] .tn-atom {
                     -webkit-transform: rotate(180deg);
-                    -moz-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
                     transform: rotate(180deg);
                 }
 
@@ -6130,6 +6227,8 @@ position: static;
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                 }
 
@@ -6491,7 +6590,7 @@ position: static;
 
                 #rec598638519 .tn-elem[data-elem-id="1683883871976"] .tn-atom {
                     -webkit-transform: rotate(180deg);
-                    -moz-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
                     transform: rotate(180deg);
                 }
 
@@ -6546,6 +6645,8 @@ position: static;
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                 }
 
@@ -6922,7 +7023,7 @@ position: static;
 
                 #rec598638519 .tn-elem[data-elem-id="1683884085651"] .tn-atom {
                     -webkit-transform: rotate(180deg);
-                    -moz-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
                     transform: rotate(180deg);
                 }
 
@@ -6977,6 +7078,8 @@ position: static;
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                 }
 
@@ -7291,7 +7394,7 @@ position: static;
 
                 #rec598638519 .tn-elem[data-elem-id="1683884092017"] .tn-atom {
                     -webkit-transform: rotate(180deg);
-                    -moz-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
                     transform: rotate(180deg);
                 }
 
@@ -7743,7 +7846,7 @@ position: static;
 
                 #rec598638519 .tn-elem[data-elem-id="1683884131472"] .tn-atom {
                     -webkit-transform: rotate(180deg);
-                    -moz-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
                     transform: rotate(180deg);
                 }
 
@@ -7903,6 +8006,8 @@ position: static;
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                 }
 
@@ -8255,7 +8360,7 @@ position: static;
 
                 #rec598638519 .tn-elem[data-elem-id="1685531611173"] .tn-atom {
                     -webkit-transform: rotate(180deg);
-                    -moz-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
                     transform: rotate(180deg);
                 }
 
@@ -8548,7 +8653,7 @@ position: static;
 
                 #rec598638519 .tn-elem[data-elem-id="1685531611193"] .tn-atom {
                     -webkit-transform: rotate(180deg);
-                    -moz-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
                     transform: rotate(180deg);
                 }
 
@@ -8606,7 +8711,7 @@ position: static;
 
                 #rec598638519 .tn-elem[data-elem-id="1685531611196"] .tn-atom {
                     -webkit-transform: rotate(180deg);
-                    -moz-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
                     transform: rotate(180deg);
                 }
 
@@ -8745,7 +8850,7 @@ position: static;
 
                     #rec598638519 .tn-elem[data-elem-id="1685531611203"] .tn-atom {
                         -webkit-transform: rotate(0deg);
-                        -moz-transform: rotate(0deg);
+                        -ms-transform: rotate(0deg);
                         transform: rotate(0deg);
                     }
                 }
@@ -8906,7 +9011,7 @@ position: static;
 
                 #rec598638519 .tn-elem[data-elem-id="1685531611215"] .tn-atom {
                     -webkit-transform: rotate(180deg);
-                    -moz-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
                     transform: rotate(180deg);
                 }
 
@@ -8937,7 +9042,7 @@ position: static;
 
                     #rec598638519 .tn-elem[data-elem-id="1685531611215"] .tn-atom {
                         -webkit-transform: rotate(180deg);
-                        -moz-transform: rotate(180deg);
+                        -ms-transform: rotate(180deg);
                         transform: rotate(180deg);
                     }
                 }
@@ -9253,7 +9358,7 @@ position: static;
 
                 #rec598638519 .tn-elem[data-elem-id="1685604180893"] .tn-atom {
                     -webkit-transform: rotate(180deg);
-                    -moz-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
                     transform: rotate(180deg);
                 }
 
@@ -9403,7 +9508,7 @@ position: static;
 
                 #rec598638519 .tn-elem[data-elem-id="1685604180928"] .tn-atom {
                     -webkit-transform: rotate(180deg);
-                    -moz-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
                     transform: rotate(180deg);
                 }
 
@@ -9510,6 +9615,7 @@ position: static;
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
                     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
                 }
 
@@ -9593,7 +9699,7 @@ position: static;
 
                     #rec598638519 .tn-elem[data-elem-id="1685963039455"] .tn-atom {
                         -webkit-transform: rotate(180deg);
-                        -moz-transform: rotate(180deg);
+                        -ms-transform: rotate(180deg);
                         transform: rotate(180deg);
                     }
                 }
@@ -9645,7 +9751,7 @@ position: static;
 
                     #rec598638519 .tn-elem[data-elem-id="1685963074923"] .tn-atom {
                         -webkit-transform: rotate(180deg);
-                        -moz-transform: rotate(180deg);
+                        -ms-transform: rotate(180deg);
                         transform: rotate(180deg);
                     }
                 }
@@ -9743,7 +9849,7 @@ position: static;
 
                     #rec598638519 .tn-elem[data-elem-id="1685963106331"] .tn-atom {
                         -webkit-transform: rotate(180deg);
-                        -moz-transform: rotate(180deg);
+                        -ms-transform: rotate(180deg);
                         transform: rotate(180deg);
                     }
                 }
@@ -10395,12 +10501,9 @@ position: static;
                         data-field-top-res-480-value="1678" data-field-left-res-480-value="165"
                         data-field-top-res-640-value="1086" data-field-left-res-640-value="465"
                         data-field-top-res-960-value="711" data-field-left-res-960-value="804" style="zoom: 1.583;">
-                        <div class="tn-atom tn-atom__vector"><svg viewBox="2500 1876 128.25 148.0902099609375">
-                                <path fill="#F2EAE1" fill-opacity="1.00" stroke="" stroke-opacity="1" stroke-width="0"
-                                    fill-rule="evenodd" id="tSvg73"
-                                    d="M 2628.25 1950.045166015625 C 2500 2024.090166015625 2500 2024.090166015625 2500 2024.090166015625 C 2500 2024.090166015625 2500 1875.999966015625 2500 1875.999966015625 C 2500 1875.999966015625 2628.25 1950.045166015625 2628.25 1950.045166015625">
-                                </path>
-                            </svg></div>
+                        <div class="tn-atom tn-atom__vector">
+                            <img src="images/list-white.svg" alt="" style="height: 61px;">
+                        </div>
                     </div>
                     <div class="t396__elem tn-elem tn-elem__5986385191683297082010" data-elem-id="1683297082010"
                         data-elem-type="text" data-field-top-value="848" data-field-left-value="846"
@@ -10410,7 +10513,7 @@ position: static;
                         data-field-top-res-320-value="1973" data-field-top-res-480-value="1764"
                         data-field-left-res-480-value="77" data-field-top-res-640-value="1172"
                         data-field-left-res-640-value="377" data-field-top-res-960-value="797"
-                        data-field-left-res-960-value="716" style="zoom: 1.583;">
+                        data-field-left-res-960-value="688" style="zoom: 1.583;">
                         <div class="tn-atom" field="tn_text_1683297082010">Заказать комплексную доставку</div>
                     </div>
                     <div class="t396__elem tn-elem tn-elem__5986385191683886565741 t396__elem--anim-hidden"
@@ -10421,16 +10524,13 @@ position: static;
                         data-animate-sbs-event="hover" data-animate-sbs-trgels="1683886420515,1683886928073"
                         data-animate-sbs-opts="[{'ti':'0','mx':'0','my':'0','sx':'1','sy':'1','op':'1','ro':'0','bl':'0','ea':'','dt':'0'},{'ti':0,'mx':'0','my':'0','sx':'1','sy':'1','op':0,'ro':'0','bl':'0','ea':'','dt':'0'},{'ti':200,'mx':'0','my':'0','sx':'1','sy':'1','op':1,'ro':'0','bl':'0','ea':'','dt':'0'}]"
                         data-field-filewidth-value="96" data-field-fileheight-value="111"
-                        data-field-top-res-320-value="1877" data-field-left-res-320-value="143"
+                        data-field-top-res-320-value="1877" data-field-left-res-320-value="132"
                         data-field-top-res-480-value="1678" data-field-left-res-480-value="165"
                         data-field-top-res-640-value="1086" data-field-left-res-640-value="435"
                         data-field-top-res-960-value="711" data-field-left-res-960-value="764" style="zoom: 1.583;">
-                        <div class="tn-atom tn-atom__vector"><svg viewBox="2815 1764 96.1875 111.067626953125">
-                                <path fill="#0074e6" fill-opacity="1.00" stroke="" stroke-opacity="1" stroke-width="0"
-                                    fill-rule="evenodd" id="tSvg95"
-                                    d="M 2911.1875 1819.5339 C 2815 1875.06765 2815 1875.06765 2815 1875.06765 C 2815 1875.06765 2815 1764 2815 1764 C 2815 1764 2911.1875 1819.5339 2911.1875 1819.5339">
-                                </path>
-                            </svg></div>
+                        <div class="tn-atom tn-atom__vector">
+                            <img src="images/list.svg" alt="list" style="height: 61px;">
+                        </div>
                     </div>
                     <div class="t396__elem tn-elem tn-elem__5986385191683886603575 t396__elem--anim-hidden"
                         data-elem-id="1683886603575" data-elem-type="text" data-field-top-value="848"
@@ -11836,7 +11936,11 @@ position: static;
 
                 #rec601164070 .t-submit {
                     -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+                    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+                    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
                 }
             </style>
         </div>
@@ -12102,7 +12206,11 @@ position: static;
 
                 #rec601164314 .t-submit {
                     -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+                    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+                    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
                 }
             </style>
         </div>
@@ -12368,7 +12476,11 @@ position: static;
 
                 #rec601164516 .t-submit {
                     -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+                    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+                    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
                 }
             </style>
         </div>
@@ -12634,7 +12746,11 @@ position: static;
 
                 #rec601164533 .t-submit {
                     -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+                    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+                    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
                 }
             </style>
         </div>
@@ -12900,7 +13016,11 @@ position: static;
 
                 #rec601164978 .t-submit {
                     -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+                    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+                    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
                 }
             </style>
         </div>
@@ -13403,11 +13523,13 @@ position: static;
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
                     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
                 }
 
                 #rec600449537 .tn-elem[data-elem-id="1685615969020"] .tn-atom__tip {
                     background-color: #f2eae1;
+                    -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
                     box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
                     width: 200px;
                 }
@@ -13461,11 +13583,13 @@ position: static;
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
                     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
                 }
 
                 #rec600449537 .tn-elem[data-elem-id="1685615969007"] .tn-atom__tip {
                     background-color: #f2eae1;
+                    -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
                     box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
                     width: 200px;
                 }
@@ -13519,11 +13643,13 @@ position: static;
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
                     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
                 }
 
                 #rec600449537 .tn-elem[data-elem-id="1685615969032"] .tn-atom__tip {
                     background-color: #f2eae1;
+                    -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
                     box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
                     width: 200px;
                 }
@@ -13577,11 +13703,13 @@ position: static;
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
                     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
                 }
 
                 #rec600449537 .tn-elem[data-elem-id="1685615969041"] .tn-atom__tip {
                     background-color: #f2eae1;
+                    -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
                     box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
                     width: 200px;
                 }
@@ -13635,11 +13763,13 @@ position: static;
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
                     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
                 }
 
                 #rec600449537 .tn-elem[data-elem-id="1685615969050"] .tn-atom__tip {
                     background-color: #f2eae1;
+                    -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
                     box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
                     width: 200px;
                 }
@@ -13840,7 +13970,7 @@ position: static;
 
                 #rec600449537 .tn-elem[data-elem-id="1685618702494"] .tn-atom {
                     -webkit-transform: rotate(180deg);
-                    -moz-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
                     transform: rotate(180deg);
                 }
 
@@ -14030,11 +14160,13 @@ position: static;
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
                     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
                 }
 
                 #rec600449537 .tn-elem[data-elem-id="1685969095325"] .tn-atom__tip {
                     background-color: #f2eae1;
+                    -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
                     box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
                     width: 200px;
                 }
@@ -14088,11 +14220,13 @@ position: static;
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
                     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
                 }
 
                 #rec600449537 .tn-elem[data-elem-id="1685615969060"] .tn-atom__tip {
                     background-color: #f2eae1;
+                    -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
                     box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
                     width: 200px;
                 }
@@ -15946,6 +16080,8 @@ position: static;
                 }
 
                 #rec600467209 .tn-elem[data-elem-id="1685716066159"] .tn-atom {
+                    background-image: -webkit-gradient(linear, left bottom, left top, from(#0074e64d), color-stop(22%, #0074e6), color-stop(53%, #0074e6));
+                    background-image: -o-linear-gradient(bottom, #0074e64d 0%, #0074e6 22%, #0074e6 53%);
                     background-image: linear-gradient(0turn, #0074e64d 0%, #0074e6 22%, #0074e6 53%);
                     border-color: transparent;
                     border-style: solid;
@@ -15979,6 +16115,8 @@ position: static;
                 }
 
                 #rec600467209 .tn-elem[data-elem-id="1685716660676"] .tn-atom {
+                    background-image: -webkit-gradient(linear, left bottom, left top, from(rgb(0 120 239 / 20%)), color-stop(22%, rgb(0 116 230 / 80%)), color-stop(53%, #0074e6));
+                    background-image: -o-linear-gradient(bottom, rgb(0 120 239 / 20%) 0%, rgb(0 116 230 / 80%) 22%, #0074e6 53%);
                     background-image: linear-gradient(0deg, rgb(0 120 239 / 20%) 0%, rgb(0 116 230 / 80%) 22%, #0074e6 53%);
                     border-color: transparent;
                     border-style: solid;
@@ -15986,7 +16124,7 @@ position: static;
 
                 #rec600467209 .tn-elem[data-elem-id="1685716660676"] .tn-atom {
                     -webkit-transform: rotate(180deg);
-                    -moz-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
                     transform: rotate(180deg);
                 }
 
@@ -16812,7 +16950,7 @@ position: static;
 
                 #rec600501369 .tn-elem[data-elem-id="1685700082725"] .tn-atom {
                     -webkit-transform: rotate(180deg);
-                    -moz-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
                     transform: rotate(180deg);
                 }
 
@@ -16916,7 +17054,7 @@ position: static;
 
                 #rec600501369 .tn-elem[data-elem-id="1685700341994"] .tn-atom {
                     -webkit-transform: rotate(180deg);
-                    -moz-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
                     transform: rotate(180deg);
                 }
 
@@ -17018,7 +17156,7 @@ position: static;
 
                 #rec600501369 .tn-elem[data-elem-id="1685700422017"] .tn-atom {
                     -webkit-transform: rotate(180deg);
-                    -moz-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
                     transform: rotate(180deg);
                 }
 
@@ -17122,7 +17260,7 @@ position: static;
 
                 #rec600501369 .tn-elem[data-elem-id="1685957267867"] .tn-atom {
                     -webkit-transform: rotate(180deg);
-                    -moz-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
                     transform: rotate(180deg);
                 }
 
@@ -17228,7 +17366,7 @@ position: static;
 
                 #rec600501369 .tn-elem[data-elem-id="1685957274003"] .tn-atom {
                     -webkit-transform: rotate(180deg);
-                    -moz-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
                     transform: rotate(180deg);
                 }
 
@@ -18536,6 +18674,8 @@ float: none;
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                 }
 
@@ -18612,6 +18752,8 @@ float: none;
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                 }
 
@@ -18937,6 +19079,8 @@ float: none;
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                 }
 
@@ -19017,6 +19161,8 @@ float: none;
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                 }
 
@@ -19097,6 +19243,8 @@ float: none;
                     background-position: center center;
                     border-color: transparent;
                     border-style: solid;
+                    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
                 }
 
