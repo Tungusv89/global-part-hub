@@ -2,6 +2,8 @@
 	cursor: pointer;
 	padding: 4px 8px;
 	background-color: #f2d5c5;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
 	width: fit-content;
 	text-align: center;
 	margin: 10px auto 0 auto;
