@@ -1,4 +1,14 @@
+.t923__textwrapper.t923__paddingsmall {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
 .btn-gph {
+	color: #0074e6;
+	font-size: 14px;
+	font-family: 'TTFirsNeue';
 	cursor: pointer;
 	padding: 4px 8px;
 	background-color: #f2d5c5;
@@ -73,4 +83,14 @@
 .case .description .title {
 	font-weight: 700;
 	margin-bottom: 2px;
+}
+
+@media (max-width: 479px) {
+	.t-card__title {
+		font-size: 14px!important;
+	}
+
+	.t-card__descr {
+		font-size: 12px!important;
+	}
 }
