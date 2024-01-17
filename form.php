@@ -1,25 +1,28 @@
 <?php
 include_once "config.php";
-require 'PHPMailer/PHPMailer';
-require 'PHPMailer/SMTP.php';
-require 'PHPMailer/Exception.php';
 
-if(!$_POST){
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require './PHPMailer/src/Exception.php';
+require './PHPMailer/src/PHPMailer.php';
+require './PHPMailer/src/SMTP.php';
+
+if (!$_POST) {
     // header('Location: '.SITE_URL);
 }
 
 # собираем данные из формы
-$phone = isset($_POST["phone"]) ? trim(preg_replace("/[^,.0-9]/", '', $_POST["phone"])) : '';
-$name = isset($_POST["name"]) ? trim($_POST["name"]) : '';
-$email = isset($_POST["email"]) ? trim($_POST["email"]) : '';
-$messager = isset($_POST["messanger"]) ? trim($_POST["messanger"]) : '';
-$message = isset($_POST["message"]) ? trim($_POST["message"]) : '';
+$phone = isset($_POST["phone"]) ? htmlentities(trim(preg_replace("/[^,.0-9]/", '', $_POST["phone"]))) : '';
+$name = isset($_POST["name"]) ? htmlentities(trim($_POST["name"])) : '';
+$messanger = isset($_POST["messanger"]) ? htmlentities(trim($_POST["messanger"])) : '';
+$message = isset($_POST["message"]) ? htmlentities(trim($_POST["message"])) : '';
 
 $error_message = '';
 
-if (isset($_POST['phone']) && ((int) mb_strlen($phone) < 6 || (int) mb_strlen($phone) > 60)) {
-    $error_message = 'phone';
-}
+// if (isset($_POST['phone']) && ((int) mb_strlen($phone) < 6 || (int) mb_strlen($phone) > 60)) {
+//     $error_message = 'phone';
+// }
 
 if (isset($_POST['email']) && ((int) mb_strlen($email) < 6 || (int) mb_strlen($email) > 60) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $error_message = 'email';
@@ -33,63 +36,68 @@ if (isset($_POST['message']) && empty($message)) {
     $error_message = 'message';
 }
 
-if (!isset($_POST['phone']) && !isset($_POST['email'])){
+if (!isset($_POST['phone']) && !isset($_POST['email'])) {
     $error_message = 'phone_email';
 }
 
-if($error_message){
+if ($error_message) {
     $result = json_encode(['status' => 'error', 'error' => $error_message]);
     echo $result;
     die();
 }
 
 // Формирование самого письма
-$title = "Заголовок письма";
+$title = "Заявка с сайта";
 $body = "
 <h2>Новое письмо</h2>
 <b>Имя:</b> $name<br>
-<b>Почта:</b> $email<br><br>
-<b>Сообщение:</b><br>$text
+<b>Телефон:</b> $phone<br>
+<b>Предпочитаемый способ связи:</b> $messanger <br>
 ";
 
 // Настройки PHPMailer
-$mail = new PHPMailer\PHPMailer\PHPMailer();
+$mail = new PHPMailer();
 try {
     $mail->isSMTP();
     $mail->CharSet = "UTF-8";
     $mail->SMTPAuth   = true;
     //$mail->SMTPDebug = 2;
-    $mail->Debugoutput = function($str, $level) {$GLOBALS['status'][] = $str;};
+    $mail->Debugoutput = function ($str, $level) {
+        $GLOBALS['status'][] = $str;
+    };
 
     // Настройки вашей почты
     $mail->Host       = 'smtp.beget.com'; // SMTP сервера вашей почты
-    $mail->Username   = 'taz66moe'; // Логин на почте
-    $mail->Password   = '%7kfFmfFseW3487##ns1239'; // Пароль на почте
+    $mail->Username   = 'info@globalparthub.ru'; // Логин на почте
+    $mail->Password   = 'lM&gu5up'; // Пароль на почте
     $mail->SMTPSecure = 'ssl';
-    $mail->Port       = 25;
-    $mail->setFrom('info@globalparthub.ru', 'Имя отправителя'); // Адрес самой почты и имя отправителя
+    $mail->Port       = 465;
+    $mail->setFrom('info@globalparthub.ru', 'Заявка с сайта'); // Адрес самой почты и имя отправителя
 
     // Получатель письма
     $mail->addAddress('sales@globalparthub.ru');
 
-// Отправка сообщения
-$mail->isHTML(true);
-$mail->Subject = $title;
-$mail->Body = $body;
+    // Отправка сообщения
+    $mail->isHTML(true);
+    $mail->Subject = $title;
+    $mail->Body = $body;
 
-// Проверяем отравленность сообщения
-if ($mail->send()) {$result = "success";}
-else {$result = "error";}
-
+    // Проверяем отравленность сообщения
+    if ($mail->send()) {
+        $result = "success";
+    } else {
+        $result = "error";
+        echo "Сообщение не было отправлено. Причина ошибки: {$mail->ErrorInfo}";
+    }
 } catch (Exception $e) {
     $result = "error";
     $status = "Сообщение не было отправлено. Причина ошибки: {$mail->ErrorInfo}";
 }
 
 // Отображение результата
-echo json_encode(["result" => $result, "resultfile" => $rfile, "status" => $status]);
+echo json_encode(["result" => $result]);
 
-
+header('Location: http://globalparthub.ru/');
 
 
 // class Bitrix
