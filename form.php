@@ -17,7 +17,7 @@ $phone = isset($_POST["phone"]) ? htmlentities(trim(preg_replace("/[^,.0-9]/", '
 $name = isset($_POST["name"]) ? htmlentities(trim($_POST["name"])) : '';
 $messanger = isset($_POST["messanger"]) ? htmlentities(trim($_POST["messanger"])) : '';
 $message = isset($_POST["message"]) ? htmlentities(trim($_POST["message"])) : '';
-
+$number_part = isset($_POST["number_part"]) ? htmlentities($_POST["number_part"]) : '';
 $error_message = '';
 
 // if (isset($_POST['phone']) && ((int) mb_strlen($phone) < 6 || (int) mb_strlen($phone) > 60)) {
@@ -52,8 +52,15 @@ $body = "
 <h2>Новое письмо</h2>
 <b>Имя:</b> $name<br>
 <b>Телефон:</b> $phone<br>
-<b>Предпочитаемый способ связи:</b> $messanger <br>
 ";
+
+if($messanger) {
+    $body = $body . "<b>Предпочитаемый способ связи:</b> $messanger <br>";
+}
+
+if($number_part) {
+    $body = $body . "<b>Название детали:</b> $number_part";
+}
 
 // Настройки PHPMailer
 $mail = new PHPMailer();
@@ -95,7 +102,7 @@ try {
 }
 
 // Отображение результата
-echo json_encode(["result" => $result]);
+// echo json_encode(["result" => $result]);
 
 header('Location: http://globalparthub.ru/');
 
