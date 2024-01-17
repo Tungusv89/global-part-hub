@@ -1,3 +1,4 @@
+<!-- <pre><? //var_dump($_POST); ?></pre> -->
 <?php
 include_once "config.php";
 
@@ -11,12 +12,11 @@ require './PHPMailer/src/SMTP.php';
 if (!$_POST) {
     // header('Location: '.SITE_URL);
 }
-
+// var_dump($_POST);
 # собираем данные из формы
 $phone = isset($_POST["phone"]) ? htmlentities(trim(preg_replace("/[^,.0-9]/", '', $_POST["phone"]))) : '';
 $name = isset($_POST["name"]) ? htmlentities(trim($_POST["name"])) : '';
 $messanger = isset($_POST["messanger"]) ? htmlentities(trim($_POST["messanger"])) : '';
-$message = isset($_POST["message"]) ? htmlentities(trim($_POST["message"])) : '';
 $number_part = isset($_POST["number_part"]) ? htmlentities($_POST["number_part"]) : '';
 $error_message = '';
 
@@ -113,17 +113,18 @@ header('Location: http://globalparthub.ru/');
 //     const API_ID = BITRIX_API_ID;
 //     const URL_BX_PORTAL = BITRIX_URL;
 
-//     private $email;
+
 //     private $phone;
 //     private $name;
-//     private $message;
+//     private $messager;
+//     private $number_part;
 
-//     public function __construct($phone, $email, $name, $message)
+//     public function __construct($phone, $number_part, $name, $messager)
 //     {
 //         $this->phone = $phone;
-//         $this->email = $email;
+//         $this->number_part = $number_part;
 //         $this->name = $name;
-//         $this->message = $message;
+//         $this->messager = $messager;
 //     }
 
 //     public function getContactId()
@@ -156,7 +157,7 @@ header('Location: http://globalparthub.ru/');
 //             ],
 //             'EMAIL' => [
 //                 [
-//                     'VALUE' => $this->email,
+//                     'VALUE' => $this->number_part,
 //                     'TYPE_ID' => "EMAIL",
 //                 ]
 //             ]
@@ -204,7 +205,7 @@ header('Location: http://globalparthub.ru/');
 //                 ),
 //                 "EMAIL" => array(
 //                     array(
-//                         'VALUE' => $this->email,
+//                         'VALUE' => $this->number_part,
 //                         'TYPE_ID' => "EMAIL",
 //                     )
 //                 ),
@@ -224,4 +225,4 @@ header('Location: http://globalparthub.ru/');
 //     }
 // }
 
-// (new Bitrix($phone, $email, $name, $message))->addFormDeal();
+// (new Bitrix($phone, $number_part, $name, $messager))->addFormDeal();
