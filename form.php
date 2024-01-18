@@ -120,6 +120,7 @@ class Bitrix
     private $name;
     private $messanger;
     private $number_part;
+    private $category_id = BITRIX_CATEGORY_GPH;
 
     public function __construct($phone, $number_part, $name, $messanger)
     {
@@ -151,7 +152,6 @@ class Bitrix
             'LAST_NAME' => '',
             'ADDRESS' => '',
             'ADDRESS_POSTAL_CODE' => '',
-            "CATEGORY_ID" => self::CATEGORY,
             'PHONE' => [
                 [
                     'VALUE' => $this->phone,
@@ -196,7 +196,7 @@ class Bitrix
     {
         $params = array(
             'fields' => array(
-                "CATEGORY_ID" => self::CATEGORY,
+                "CATEGORY_ID" => $this->category_id,
                 "TITLE" => 'Новая заявка с сайта  локалка' . SITE_NAME,
                 "COMMENTS" => 'Заявка с сайта ' . SITE_NAME,
                 "NAME" => $this->name,
