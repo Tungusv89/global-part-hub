@@ -1,4 +1,3 @@
-<!-- <pre><? //var_dump($_POST); ?></pre> -->
 <?php
 include_once "config.php";
 
@@ -11,12 +10,14 @@ require './PHPMailer/src/SMTP.php';
 
 if (!$_POST) {
     // header('Location: '.SITE_URL);
-}
-// var_dump($_POST);
+}?>
+<pre><?php //var_dump($_POST); ?></pre>
+<?php
 # собираем данные из формы
 $phone = isset($_POST["phone"]) ? htmlentities(trim(preg_replace("/[^,.0-9]/", '', $_POST["phone"]))) : '';
 $name = isset($_POST["name"]) ? htmlentities(trim($_POST["name"])) : '';
 $messanger = isset($_POST["messanger"]) ? htmlentities(trim($_POST["messanger"])) : '';
+$messange = isset($_POST["messange"]) ? htmlentities(trim($_POST["messange"])) : '';
 $number_part = isset($_POST["number_part"]) ? htmlentities($_POST["number_part"]) : '';
 $error_message = '';
 
@@ -54,11 +55,11 @@ $body = "
 <b>Телефон:</b> $phone<br>
 ";
 
-if($messanger) {
+if ($messanger) {
     $body = $body . "<b>Предпочитаемый способ связи:</b> $messanger <br>";
 }
 
-if($number_part) {
+if ($number_part) {
     $body = $body . "<b>Название детали:</b> $number_part";
 }
 
@@ -104,125 +105,132 @@ try {
 // Отображение результата
 // echo json_encode(["result" => $result]);
 
+// header('Location: http://globalparthub.ru/');
+
+
+class Bitrix
+{
+    const API_KEY = BITRIX_API_KEY;
+    const API_ID = BITRIX_API_ID;
+    const URL_BX_PORTAL = BITRIX_URL;
+    const CATEGORY = BITRIX_CATEGORY_GPH;
+
+
+    private $phone;
+    private $name;
+    private $messanger;
+    private $number_part;
+
+    public function __construct($phone, $number_part, $name, $messanger)
+    {
+        $this->phone = $phone;
+        $this->number_part = $number_part;
+        $this->name = $name;
+        $this->messanger = $messanger;
+    }
+
+    public function getContactId()
+    {
+        $contact_id = 0;
+
+        $result_select_by_phone = $this->sendBitrix('crm.contact.list', array('filter' => array("PHONE" => $this->phone), 'select' => array('ID')));
+        if ($result_select_by_phone['total'] > 0) {
+            $contact_id = $result_select_by_phone['result'][0]['ID'];
+        } else {
+            $result_add_contact = $this->addNewContact();
+            $contact_id = $result_add_contact['result'];
+        }
+
+        return $contact_id;
+    }
+
+    private function addNewContact()
+    {
+        $send_bitrix24_contact['fields'] = [
+            'NAME' => !empty($this->name) ? $this->name : $this->phone,
+            'LAST_NAME' => '',
+            'ADDRESS' => '',
+            'ADDRESS_POSTAL_CODE' => '',
+            "CATEGORY_ID" => self::CATEGORY,
+            'PHONE' => [
+                [
+                    'VALUE' => $this->phone,
+                    'VALUE_TYPE' => "MOBILE",
+                ]
+            ],
+            'COMMENTS' => [
+                [
+                    'VALUE' => $this->number_part
+                ]
+            ]
+        ];
+
+        $result = $this->sendBitrix('crm.contact.add', $send_bitrix24_contact);
+        return $result;
+    }
+
+    private function sendBitrix($method, $data = array())
+    {
+
+        $url_param = http_build_query($data);
+
+        $full_url = 'https://' . self::URL_BX_PORTAL . '/rest/' . self::API_ID . '/' . self::API_KEY . '/' . $method . '.json?' . $url_param;
+
+        $file_content = @file_get_contents($full_url);
+
+        if ($file_content === false) {
+            http_response_code(403);
+            $error = json_encode(['status' => 'error']);
+            echo $error;
+
+            exit;
+            die();
+        }
+
+        $res = json_decode($file_content, 1);
+
+        return $res;
+    }
+
+    public function addFormDeal()
+    {
+        $params = array(
+            'fields' => array(
+                "CATEGORY_ID" => self::CATEGORY,
+                "TITLE" => 'Новая заявка с сайта  локалка' . SITE_NAME,
+                "COMMENTS" => 'Заявка с сайта ' . SITE_NAME,
+                "NAME" => $this->name,
+                "PHONE" => array(
+                    array(
+                        'VALUE' => $this->phone,
+                        'TYPE_ID' => "PHONE",
+                    )
+                ),
+                "EMAIL" => array(
+                    array(
+                        'VALUE' => $this->number_part,
+                        'TYPE_ID' => "EMAIL",
+                    )
+                ),
+                "CONTACT_IDS" => array($this->getContactId()),
+                "ORIGINATOR_ID" => "WEB",
+                "SOURCE_ID" => "WEB",
+            ),
+        );
+
+        $result_lead_add = $this->sendBitrix('crm.deal.add', $params);
+
+        http_response_code(200);
+
+        $success = json_encode(['status' => 'success']);
+        echo $success;
+        die();
+    }
+}
+// echo $phone;
+// echo $number_part;
+// echo $name;
+// echo $messanger;
+(new Bitrix($phone, $number_part, $name, $messanger))->addFormDeal();
+
 header('Location: http://globalparthub.ru/');
-
-
-// class Bitrix
-// {
-//     const API_KEY = BITRIX_API_KEY;
-//     const API_ID = BITRIX_API_ID;
-//     const URL_BX_PORTAL = BITRIX_URL;
-
-
-//     private $phone;
-//     private $name;
-//     private $messager;
-//     private $number_part;
-
-//     public function __construct($phone, $number_part, $name, $messager)
-//     {
-//         $this->phone = $phone;
-//         $this->number_part = $number_part;
-//         $this->name = $name;
-//         $this->messager = $messager;
-//     }
-
-//     public function getContactId()
-//     {
-//         $contact_id = 0;
-
-//         $result_select_by_phone = $this->sendBitrix('crm.contact.list', array('filter' => array("PHONE" => $this->phone), 'select' => array('ID')));
-//         if ($result_select_by_phone['total'] > 0) {
-//             $contact_id = $result_select_by_phone['result'][0]['ID'];
-//         } else {
-//             $result_add_contact = $this->addNewContact();
-//             $contact_id = $result_add_contact['result'];
-//         }
-
-//         return $contact_id;
-//     }
-
-//     private function addNewContact()
-//     {
-//         $send_bitrix24_contact['fields'] = [
-//             'NAME' => !empty($this->name) ? $this->name : $this->phone,
-//             'LAST_NAME' => '',
-//             'ADDRESS' => '',
-//             'ADDRESS_POSTAL_CODE' => '',
-//             'PHONE' => [
-//                 [
-//                     'VALUE' => $this->phone,
-//                     'VALUE_TYPE' => "MOBILE",
-//                 ]
-//             ],
-//             'EMAIL' => [
-//                 [
-//                     'VALUE' => $this->number_part,
-//                     'TYPE_ID' => "EMAIL",
-//                 ]
-//             ]
-//         ];
-
-//         $result = $this->sendBitrix('crm.contact.add', $send_bitrix24_contact);
-//         return $result;
-//     }
-
-//     private function sendBitrix($method, $data = array())
-//     {
-
-//         $url_param = http_build_query($data);
-
-//         $full_url = 'https://' . self::URL_BX_PORTAL . '/rest/' . self::API_ID . '/' . self::API_KEY . '/' . $method . '.json?' . $url_param;
-
-//         $file_content = @file_get_contents($full_url);
-
-//         if ($file_content === false) {
-//             http_response_code(403);
-//             $error = json_encode(['status' => 'error']);
-//             echo $error;
-
-//             exit;
-//             die();
-//         }
-
-//         $res = json_decode($file_content, 1);
-
-//         return $res;
-//     }
-
-//     public function addFormDeal()
-//     {
-//         $params = array(
-//             'fields' => array(
-//                 "TITLE" => 'Новая заявка с сайта ' . SITE_NAME,
-//                 "COMMENTS" => 'Заявка с сайта ' . SITE_NAME,
-//                 "NAME" => $this->name,
-//                 "PHONE" => array(
-//                     array(
-//                         'VALUE' => $this->phone,
-//                         'TYPE_ID' => "PHONE",
-//                     )
-//                 ),
-//                 "EMAIL" => array(
-//                     array(
-//                         'VALUE' => $this->number_part,
-//                         'TYPE_ID' => "EMAIL",
-//                     )
-//                 ),
-//                 "CONTACT_IDS" => array($this->getContactId()),
-//                 "ORIGINATOR_ID" => "WEB",
-//                 "SOURCE_ID" => "WEB",
-//             ),
-//         );
-
-//         $result_lead_add = $this->sendBitrix('crm.deal.add', $params);
-
-//         http_response_code(200);
-
-//         $success = json_encode(['status' => 'success']);
-//         echo $success;
-//         die();
-//     }
-// }
-
-// (new Bitrix($phone, $number_part, $name, $messager))->addFormDeal();
