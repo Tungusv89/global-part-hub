@@ -196,7 +196,7 @@ class Bitrix
             'fields' => array(
                 "CATEGORY_ID" => $this->category_id,
                 "ASSIGNED_BY_ID" => $this->assigned_by,
-                "TITLE" => 'Новая заявка с сайта  локалка' . SITE_NAME,
+                "TITLE" => 'Новая заявка с сайта' . SITE_NAME,
                 "COMMENTS" => $this->number_part,
                 "NAME" => $this->name,
                 "PHONE" => array(
