@@ -105,7 +105,7 @@ try {
 // Отображение результата
 // echo json_encode(["result" => $result]);
 
-// header('Location: http://globalparthub.ru/');
+
 
 
 class Bitrix
