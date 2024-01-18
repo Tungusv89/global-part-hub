@@ -114,6 +114,7 @@ class Bitrix
     const API_ID = BITRIX_API_ID;
     const URL_BX_PORTAL = BITRIX_URL;
     const CATEGORY = BITRIX_CATEGORY_GPH;
+    const ASSIGNED_BY_ID = ASSIGNED_BY_ID;
 
 
     private $phone;
@@ -121,6 +122,7 @@ class Bitrix
     private $messanger;
     private $number_part;
     private $category_id = BITRIX_CATEGORY_GPH;
+    private $assigned_by = ASSIGNED_BY_ID;
 
     public function __construct($phone, $number_part, $name, $messanger)
     {
@@ -148,6 +150,7 @@ class Bitrix
     private function addNewContact()
     {
         $send_bitrix24_contact['fields'] = [
+            "ASSIGNED_BY_ID" => $this->assigned_by,
             'NAME' => !empty($this->name) ? $this->name : $this->phone,
             'LAST_NAME' => '',
             'ADDRESS' => '',
@@ -156,11 +159,6 @@ class Bitrix
                 [
                     'VALUE' => $this->phone,
                     'VALUE_TYPE' => "MOBILE",
-                ]
-            ],
-            'COMMENTS' => [
-                [
-                    'VALUE' => $this->number_part
                 ]
             ]
         ];
@@ -197,19 +195,14 @@ class Bitrix
         $params = array(
             'fields' => array(
                 "CATEGORY_ID" => $this->category_id,
+                "ASSIGNED_BY_ID" => $this->assigned_by,
                 "TITLE" => 'Новая заявка с сайта  локалка' . SITE_NAME,
-                "COMMENTS" => 'Заявка с сайта ' . SITE_NAME,
+                "COMMENTS" => $this->number_part,
                 "NAME" => $this->name,
                 "PHONE" => array(
                     array(
                         'VALUE' => $this->phone,
                         'TYPE_ID' => "PHONE",
-                    )
-                ),
-                "EMAIL" => array(
-                    array(
-                        'VALUE' => $this->number_part,
-                        'TYPE_ID' => "EMAIL",
                     )
                 ),
                 "CONTACT_IDS" => array($this->getContactId()),
