@@ -10,15 +10,21 @@ require './PHPMailer/src/SMTP.php';
 
 if (!$_POST) {
     // header('Location: '.SITE_URL);
-}?>
-<pre><?php //var_dump($_POST); ?></pre>
+};
+?>
+<pre><?php //var_dump($_GET) ?></pre>
 <?php
 # собираем данные из формы
 $phone = isset($_POST["phone"]) ? htmlentities(trim(preg_replace("/[^,.0-9]/", '', $_POST["phone"]))) : '';
-$name = isset($_POST["name"]) ? htmlentities(trim($_POST["name"])) : '';
+$name = isset($_POST["name"]) ? htmlentities($_POST["name"]) : '';
 $messanger = isset($_POST["messanger"]) ? htmlentities(trim($_POST["messanger"])) : '';
 $messange = isset($_POST["messange"]) ? htmlentities(trim($_POST["messange"])) : '';
 $number_part = isset($_POST["number_part"]) ? htmlentities($_POST["number_part"]) : '';
+$utm_source = isset($_GET['utm_source']) ? $_GET['utm_source'] : '';
+$utm_campaign = isset($_GET['utm_campaign']) ? $_GET['utm_campaign'] : '';
+$utm_medium = isset($_GET['utm_medium']) ? $_GET['utm_medium'] : '';
+$utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : '';
+$utm_term = isset($_GET['utm_term']) ? $_GET['utm_term'] : '';
 $error_message = '';
 
 // if (isset($_POST['phone']) && ((int) mb_strlen($phone) < 6 || (int) mb_strlen($phone) > 60)) {
@@ -123,13 +129,23 @@ class Bitrix
     private $number_part;
     private $category_id = BITRIX_CATEGORY_GPH;
     private $assigned_by = ASSIGNED_BY_ID;
+    private $utm_source;
+    private $utm_campaign;
+    private $utm_medium;
+    private $utm_content;
+    private $utm_term;
 
-    public function __construct($phone, $number_part, $name, $messanger)
+    public function __construct($phone, $number_part, $name, $messanger,$utm_source, $utm_campaign, $utm_medium, $utm_content, $utm_term)
     {
         $this->phone = $phone;
         $this->number_part = $number_part;
         $this->name = $name;
         $this->messanger = $messanger;
+        $this->utm_source = $utm_source;
+        $this->utm_campaign = $utm_campaign;
+        $this->utm_medium = $utm_medium;
+        $this->utm_content = $utm_content;
+        $this->utm_term = $utm_term;
     }
 
     public function getContactId()
@@ -208,6 +224,11 @@ class Bitrix
                 "CONTACT_IDS" => array($this->getContactId()),
                 "ORIGINATOR_ID" => "WEB",
                 "SOURCE_ID" => "WEB",
+                "UTM_CAMPAIGN" => $this->utm_campaign,
+                "UTM_CONTENT" => $this->utm_content,
+                "UTM_MEDIUM" => $this->utm_medium,
+                "UTM_SOURCE" => $this->utm_source,
+                "UTM_TERM" => $this->utm_term
             ),
         );
 
@@ -220,10 +241,5 @@ class Bitrix
         die();
     }
 }
-// echo $phone;
-// echo $number_part;
-// echo $name;
-// echo $messanger;
-(new Bitrix($phone, $number_part, $name, $messanger))->addFormDeal();
 
-header('Location: http://globalparthub.ru/');
+(new Bitrix($phone, $number_part, $name, $messanger, $utm_source, $utm_campaign, $utm_medium, $utm_content, $utm_term))->addFormDeal();
