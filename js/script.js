@@ -29,11 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log(window.location.search);
   // Ajax на форме
   document.querySelectorAll('form').forEach((form) => {
-
     // Устанавливаем событие отправки для формы
     form.addEventListener('submit', function (event) {
       const button = form.querySelector('button[type="submit"]');
-      button.classList.add('sending');
+      
+      button.disabled;
+      button.style.opacity = '0.4';
       button.querySelectorAll('input').forEach((input) => {
         input.disabled;
       });
@@ -47,20 +48,27 @@ document.addEventListener('DOMContentLoaded', () => {
       let request_url = 'form.php' + window.location.search;
 
       // Настраиваем запрос
-      xhr.open('POST',  request_url); // Метод и путь до php файла отправителя
+      xhr.open('POST', request_url); // Метод и путь до php файла отправителя
       // Устанавливаем функцию, которая выполняется при успешной отправке сообщения
       xhr.onload = function () {
         if (xhr.status === 200) {
           // Код в этом блоке выполняется при успешной отправке сообщения
+          let fields = form.elements;
+          // Пройтись по всем полям в цикле
+          for (let i = 0; i < fields.length; i++) {
+            // Присвоить пустое значение каждому полю
+            fields[i].value = '';
+          }
           console.log('Ваше сообщение отправлено!');
         }
       };
       // Отправляем запрос с данными формы
       xhr.send(form_data);
+      button.disabled = false;
+      button.style.opacity = '1';
       button.querySelectorAll('input').forEach((input) => {
-        input.removeAttribute('disabled');
+        input.disabled = false;
       });
-      button.classList.remove('sending');
     });
   });
 });
